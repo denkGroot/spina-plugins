@@ -1,0 +1,10 @@
+= restaurant_menu_collection_form.fields_for :page_partable, restaurant_menu_collection_form.object.page_partable do |form|
+
+
+  = link_to_add_fields "Nieuw restaurant menu", form, :restaurant_menus
+
+  = form.fields_for :restaurant_menus do |restaurant_menu_fields|
+    %p= restaurant_menu_fields.text_field :name 
+
+    = restaurant_menu_fields.fields_for :restaurant_dishes do |restaurant_dish_fields|
+      %p= restaurant_dish_fields.text_field :name
