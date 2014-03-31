@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "spina/reservations/version"
+require "spina/restaurantmenus/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "spina-reservations"
-  s.version     = Spina::Reservations::VERSION
+  s.name        = "spina-restaurantmenus"
+  s.version     = Spina::Restaurantmenus::VERSION
   s.authors     = ["Bram Jetten"]
   s.email       = ["bram@denkgroot.com"]
   s.homepage    = "http://www.denkgroot.com"

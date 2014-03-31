@@ -1,5 +1,5 @@
 module Spina
-  module Reservations
+  module Restaurantmenus
     class Engine < ::Rails::Engine
     end
   end

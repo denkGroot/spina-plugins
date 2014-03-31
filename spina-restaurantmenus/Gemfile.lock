@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina-reservations (0.0.1)
+    spina-restaurantmenus (0.0.1)
       rails (~> 4.0.4)
 
 GEM
@@ -84,5 +84,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  spina-reservations!
+  spina-restaurantmenus!
   sqlite3
