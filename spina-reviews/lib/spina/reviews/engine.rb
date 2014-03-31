@@ -1,12 +1,12 @@
 module Spina
-  module Restaurantmenus
+  module Reviews
     class Engine < ::Rails::Engine
       isolate_namespace Spina
 
       initializer "register plugin" do
         plugin = ::Spina::Plugin.new
-        plugin.name = "Restaurant menu"
-        plugin.config = Restaurantmenus.config
+        plugin.name = "Reviews"
+        plugin.config = Reviews.config
         ::Spina.register_plugin(plugin)
       end
     end
