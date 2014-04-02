@@ -1,5 +1,5 @@
 module Spina
-  module Reviews
+  module Openinghours
     class Engine < ::Rails::Engine
       isolate_namespace Spina
 
@@ -12,8 +12,8 @@ module Spina
 
       initializer "register plugin" do
         plugin = ::Spina::Plugin.new
-        plugin.name = "Reviews"
-        plugin.config = Reviews.config
+        plugin.name = "Openinghours"
+        plugin.config = Openinghours.config
         ::Spina.register_plugin(plugin)
       end
     end

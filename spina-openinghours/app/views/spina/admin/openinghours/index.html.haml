@@ -1,0 +1,15 @@
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th Dag
+        %th Openingstijden
+        %th
+
+    %tbody
+
+      - @openinghours.each do |openinghour|
+        %tr
+          %td= I18n.t('date.day_names')[openinghour.day].capitalize
+          %td= openinghour.openingtimes
+          %td= link_to 'Bewerken', spina.edit_admin_openinghour_path(openinghour), class: 'button button-link', data: {icon: 'q'}
