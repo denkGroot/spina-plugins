@@ -13,7 +13,7 @@ module Spina
     private
 
     def day_must_be_present_and_unique
-      if day.blank? || Openinghour.where(day: day).exists?
+      if day.blank? || Openinghour.where(day: day).where.not(id: id).exists?
         errors.add(:day, 'moet uniek zijn')
       end
     end
