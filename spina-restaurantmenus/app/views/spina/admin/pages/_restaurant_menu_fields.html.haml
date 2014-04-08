@@ -1,10 +1,9 @@
 %fieldset.restaurant-menu-form
   .restaurant-menu-name
-    .column-nine
-      = f.text_field :name, placeholder: 'Menukaart'
-    .column-three
+    .pull-right
       = f.hidden_field :_destroy
       = link_to 'verwijder kaart', '#', class: 'remove_fields button button-link button-mini icon-mini', data: {icon: 'l'}
+    .pull-left= f.text_field :name, placeholder: 'Menukaart'
 
   = f.fields_for :restaurant_dishes do |restaurant_dish_builder|
     = render 'restaurant_dish_fields', f: restaurant_dish_builder
