@@ -1,0 +1,29 @@
+%p= "Beste beheerder van #{@current_account.name},"
+
+%p 
+  Er is een reservering geplaatst op je website. Je kunt reageren door deze email te beantwoorden.
+
+%table
+  %tr
+    %td Door
+    %td= @reservation.name
+    
+  %tr  
+    %td Email
+    %td= @reservation.email
+
+  %tr
+    %td Telefoonnummer
+    %td= @reservation.phone
+
+  %tr
+    %td Datum
+    %td= @reservation.date
+
+  %tr
+    %td Tijd
+    %td= @reservation.time
+
+  %tr
+    %td Aantal personen
+    %td= @reservation.persons
