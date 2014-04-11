@@ -4,7 +4,7 @@ module Spina
     private
 
     def reservation_page_path
-      Page.where(view_template: 'reservation').first.try(:materialized_path)
+      Page.where(view_template: 'reservation').live.first.try(:materialized_path)
     end
     helper_method :reservation_page_path
 
