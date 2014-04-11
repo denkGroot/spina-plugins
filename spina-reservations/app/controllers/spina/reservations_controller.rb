@@ -4,7 +4,6 @@ module Spina
 
     def create
       @reservation = Reservation.new(@captcha.values)
-      @reservation.attributes = params[:reservation]
       @reservation.message = @reservation.message
 
       if @reservation.save
