@@ -1,20 +1,13 @@
 module Spina
-  class Reservation < Inquiry
-    attr_accessor :date, :time, :persons
+  class Reservation < ActiveRecord::Base
+    validates :date, :time, :persons, :phone, :email, :name, presence: true
 
-    validates :date, :time, :persons, :phone, presence: true
-    validate :reservation_is_in_the_future
-
-    def message
-      "Reservering: #{self.date}, #{self.time} uur, #{self.persons} personen"
+    def ham!
+      update_attributes({spam: false}, without_protection: true)
     end
 
-    private
-
-    def reservation_is_in_the_future
-      if date.present? && Date.parse(date) < Date.today
-        errors.add(:date, 'Reserveren kan alleen voor de toekomst')
-      end
+    def spam!
+      update_attributes({spam: true}, without_protection: true)
     end
 
   end

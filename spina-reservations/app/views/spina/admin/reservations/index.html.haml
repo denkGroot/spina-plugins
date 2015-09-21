@@ -1,0 +1,21 @@
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th
+          Naam
+        %th
+          Datum
+
+    %tbody
+      - if @reservations.any?
+        - @reservations.each do |reservation|
+          %tr
+            %td
+              = reservation.name
+            %td
+              = reservation.date
+      - else
+        %tr
+          %td.align-center{colspan: 2}
+            %em Er zijn nog geen reserveringen geplaatst

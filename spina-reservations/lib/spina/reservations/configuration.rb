@@ -2,11 +2,13 @@ module Spina
   module Reservations
     include ActiveSupport::Configurable
 
-    config_accessor :name, :description, :plugin_type
+    config_accessor :title, :controller, :description, :spina_icon, :plugin_type
 
-    self.name = 'Reserveringen'
-    self.description = 'Maak reserveringen aan voor je restaurant'
+    self.title = 'Reserveringen'
+    self.controller = 'reservations'
+    self.description = 'Beheer reserveringen voor je restaurant'
+    self.spina_icon = 'mail-outline'
 
-    self.plugin_type = 'page_part'
+    self.plugin_type = 'website_resource'
   end
 end
