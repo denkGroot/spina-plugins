@@ -17,7 +17,7 @@
             .select-dropdown= f.select :rating, [["1 ster", 1], ["2 sterren", 2], ["3 sterren", 3], ["4 sterren", 4], ["5 sterren", 5]]
         %tr
           %td
-            Datum
+            Datum beoordeling
           %td
             = f.text_field :created_at, value: (@review.created_at.strftime("%d-%m-%Y") unless @review.new_record?), placeholder: "Datum van beoordeling", class: 'datepicker'
         %tr

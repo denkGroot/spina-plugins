@@ -8,6 +8,7 @@
   %table.table
     %thead
       %tr
+        %th
         %th Naam
         %th Beoordeling
         %th
@@ -16,18 +17,30 @@
       - if @reviews.any?
         - @reviews.each do |review|
           %tr
+            %td
+              - if review.confirmed_at.present?
+                %label.label.label-success
+                  Live
+              - else
+                %label.label
+                  Concept
             %td.nowrap
               = review.name
               %small= time_ago_in_words(review.created_at) + " geleden"
             %td
               .rating
                 - review.rating.times do 
-                  %i{data: {icon: '5'}}
+                  %i.icon.icon-check{style: 'color: #ffb500'}
                 - (5 - review.rating).times do
-                  %i.icon-dimmed{data: {icon: '5'}}
+                  %i.icon-dimmed.icon.icon-check{style: 'color: #ccc'}
               %p= review.explanation
-            %td.nowrap
-              = link_to 'Bewerken', spina.edit_admin_review_path(review), class: 'button button-link', data: {icon: 'q'}
+            %td.nowrap.align-right
+              - if review.confirmed_at.nil?
+                = link_to spina.confirm_admin_review_path(review), class: 'button button-mini button-primary', data: {method: :post, confirm: "Weet je zeker dat je deze beoordeling wilt publiceren op de website?"} do
+                  = icon('check')
+                  Publiceer
+              = link_to spina.edit_admin_review_path(review), class: 'button button-link' do
+                = icon('pencil-outline')
 
       - else
         %tr

@@ -10,7 +10,7 @@ module Spina
       end
 
       def index
-        @reviews = Review.all
+        @reviews = Review.ordered
         @average_rating = Review.average('rating') || 0
       end
 
@@ -54,6 +54,13 @@ module Spina
         redirect_to spina.admin_reviews_url, notice: "De beoordeling is verwijderd."
       end
 
+      def confirm
+        @review = Review.find(params[:id])
+        @review.confirmed_at = Date.today
+        @review.save
+        redirect_to spina.admin_reviews_url
+      end
+
       private
 
       def set_breadcrumb
@@ -61,7 +68,7 @@ module Spina
       end
 
       def review_params
-        params.require(:review).permit(:name, :rating, :created_at, :explanation)
+        params.require(:review).permit(:name, :rating, :created_at, :explanation, :confirmed_at)
       end
     end
   end

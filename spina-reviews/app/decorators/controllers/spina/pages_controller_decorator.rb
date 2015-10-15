@@ -4,7 +4,7 @@ module Spina
     private
 
     def reviews
-      Review.order('created_at DESC')
+      Review.ordered.confirmed
     end
     helper_method :reviews
 
