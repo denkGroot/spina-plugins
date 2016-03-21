@@ -1,7 +1,7 @@
 module Spina
   module Reviews
     module Admin
-      class ReviewsController < ::Spina::AdminController
+      class ReviewsController < ::Spina::Admin::AdminController
 
         before_filter :set_breadcrumb
 
@@ -17,7 +17,7 @@ module Spina
         end
 
         def new
-          add_breadcrumb "Nieuwe beoordeling", spina.reviews_new_admin_review_path
+          add_breadcrumb "Nieuwe beoordeling", spina.new_reviews_admin_review_path
 
           @review = Review.new
         end

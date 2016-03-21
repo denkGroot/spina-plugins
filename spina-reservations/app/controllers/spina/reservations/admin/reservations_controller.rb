@@ -1,7 +1,7 @@
 module Spina
   module Reservations
     module Admin
-      class ReservationsController < ::Spina::AdminController
+      class ReservationsController < ::Spina::Admin::AdminController
 
         before_filter :set_breadcrumb
 

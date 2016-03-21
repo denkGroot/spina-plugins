@@ -1,7 +1,7 @@
 module Spina
   module Openinghours
     module Admin
-      class OpeninghoursController < ::Spina::AdminController
+      class OpeninghoursController < ::Spina::Admin::AdminController
 
         before_filter :set_breadcrumb
 

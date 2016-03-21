@@ -4,7 +4,7 @@ module Spina
     private
 
     def reviews
-      Review.ordered.confirmed
+      Reviews::Review.ordered.confirmed
     end
     helper_method :reviews
 
@@ -14,12 +14,12 @@ module Spina
     helper_method :reviews_page_path
 
     def average_rating
-      Review.average('rating') || 0
+      Reviews::Review.average('rating') || 0
     end
     helper_method :average_rating
 
     def rating_count
-      Review.count
+      Reviews::Review.count
     end
     helper_method :rating_count
 

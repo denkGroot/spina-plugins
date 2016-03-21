@@ -4,7 +4,7 @@ module Spina
     private
 
     def openinghours
-      Openinghour.all.sort_by { |openinghour| [1, 2, 3, 4, 5, 6, 0].index(openinghour.day) }
+      Openinghours::Openinghour.all.sort_by { |openinghour| [1, 2, 3, 4, 5, 6, 0].index(openinghour.day) }
     end
     helper_method :openinghours
 
