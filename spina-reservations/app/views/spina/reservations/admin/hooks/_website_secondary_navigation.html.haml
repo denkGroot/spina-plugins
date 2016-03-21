@@ -1,0 +1,5 @@
+%li{ class: ('active' if current_admin_path.start_with?('/reservations')) }
+  = link_to spina.reservations_admin_reservations_path do
+    = icon('mail-outline')
+    = plugin.title
+    %small Beheer reserveringen voor je restaurant

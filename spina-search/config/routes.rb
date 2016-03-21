@@ -1,3 +1,7 @@
 Spina::Engine.routes.draw do
-  get '/search', to: 'search#query', format: :json, as: :search
+
+  namespace :search, path: nil do
+    get '/search', to: 'search/search#query', format: :json, as: :search
+  end
+
 end

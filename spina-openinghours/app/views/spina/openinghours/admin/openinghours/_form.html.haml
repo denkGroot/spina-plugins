@@ -1,0 +1,20 @@
+= form_for [spina, :openinghours, :admin, @openinghour], html: {autocomplete: "off"} do |f|
+  - content_for :notification_alert do
+    = error_explanation!(@openinghour)
+
+  #page_content.tab-content.active
+    .table-container
+      %table.table.table-form
+        %tr
+          %th Openingstijd
+          %td.openinghours-start
+            = f.text_field :start_time, placeholder: "09:00", class: 'input-mini'
+        %tr
+          %th Sluitingstijd
+          %td.openinghours-end
+            = f.text_field :end_time, placeholder: "17:00", class: 'input-mini'
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Openingstijd opslaan
+
+  = link_to "Annuleren", spina.openinghours_admin_openinghours_path, class: 'button button-link'

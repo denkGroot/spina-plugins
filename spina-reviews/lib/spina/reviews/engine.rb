@@ -1,7 +1,8 @@
 module Spina
   module Reviews
     class Engine < ::Rails::Engine
-      isolate_namespace Spina
+
+      isolate_namespace Spina::Reviews
 
       def self.require_decorators
         [Engine.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
@@ -10,12 +11,14 @@ module Spina
       end
       config.to_prepare &method(:require_decorators).to_proc
 
-      initializer "register plugin" do
-        plugin = ::Spina::Plugin.new
-        plugin.name = "Reviews"
-        plugin.config = Reviews.config
-        ::Spina.register_plugin(plugin)
+      initializer 'register plugin' do
+        plugin = ::Spina::Plugin.new({
+          name:         'Reviews',
+          namespace:    'reviews',
+        })
+        ::Spina::Plugin.register(plugin)
       end
+
     end
   end
 end

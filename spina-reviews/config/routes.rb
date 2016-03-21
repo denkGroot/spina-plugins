@@ -1,9 +1,13 @@
 Spina::Engine.routes.draw do
-  namespace :admin do
-    resources :reviews do
-      member do
-        post 'confirm'
+
+  namespace :reviews, path: nil do
+    namespace :admin, path: Spina.config.backend_path do
+      resources :reviews do
+        member do
+          post 'confirm'
+        end
       end
     end
   end
+
 end

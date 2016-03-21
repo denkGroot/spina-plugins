@@ -1,7 +1,9 @@
 Spina::Engine.routes.draw do
-  resources :reservations, only: [:create]
 
-  namespace :admin do
-    resources :reservations
+  namespace :reservations, path: nil do
+    namespace :admin, path: Spina.config.backend_path do
+      resources :reservations
+    end
   end
+
 end
