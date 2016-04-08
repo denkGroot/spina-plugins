@@ -11,12 +11,11 @@ module Spina
       end
       config.to_prepare &method(:require_decorators).to_proc
 
-      initializer 'register plugin' do
-        plugin = ::Spina::Plugin.new({
-          name:         'Openinghours',
-          namespace:    'openinghours',
-        })
-        ::Spina::Plugin.register(plugin)
+      initializer 'spina.plugin.register.openinghours' do
+        ::Spina::Plugin.register do |plugin|
+          plugin.name       = 'Openinghours'
+          plugin.namespace  = 'openinghours'
+        end
       end
     end
   end

@@ -6,9 +6,9 @@
     .pull-left= f.text_field :name, placeholder: 'Menukaart'
 
   = f.fields_for :restaurant_dishes do |restaurant_dish_builder|
-    = render 'restaurant_dish_fields', f: restaurant_dish_builder
+    = render 'spina/admin/restaurantmenus/restaurant_dishes/fields', f: restaurant_dish_builder
 
   = link_to_add_fields f, :restaurant_dishes do
     %i{data: {icon: 't'}}
     gerecht toevoegen
-    
+
