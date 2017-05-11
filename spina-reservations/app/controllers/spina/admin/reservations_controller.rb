@@ -3,8 +3,6 @@ module Spina
     class ReservationsController < AdminController
       before_filter :set_breadcrumb
 
-      layout "spina/admin/website"
-
       def show
         @reservation = Reservation.find(params[:id])
       end

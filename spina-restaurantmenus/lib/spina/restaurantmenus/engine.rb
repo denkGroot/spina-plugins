@@ -4,10 +4,10 @@ module Spina
       isolate_namespace Spina
 
       initializer "register plugin" do
-        plugin = ::Spina::Plugin.new
-        plugin.name = "Restaurant menu"
-        plugin.config = Restaurantmenus.config
-        ::Spina.register_plugin(plugin)
+        Spina::Plugin.register do |plugin|
+          plugin.name = 'restaurant_menus'
+          plugin.namespace = 'restaurant_menus'
+        end
       end
     end
   end
