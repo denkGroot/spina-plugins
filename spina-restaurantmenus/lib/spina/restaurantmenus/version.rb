@@ -1,5 +1,5 @@
 module Spina
   module Restaurantmenus
-    VERSION = "0.3.0"
+    VERSION = "0.0.6"
   end
 end
