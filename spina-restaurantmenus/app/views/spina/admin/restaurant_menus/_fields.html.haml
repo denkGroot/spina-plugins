@@ -1,14 +1,15 @@
-%fieldset.restaurant-menu-form
-  .restaurant-menu-name
-    .pull-right
-      = f.hidden_field :_destroy
-      = link_to 'verwijder kaart', '#', class: 'remove_fields button button-link button-mini icon-mini', data: {icon: 'l'}
-    .pull-left= f.text_field :name, placeholder: 'Menukaart'
+%fieldset
+  .restaurant-menu-form
+    .restaurant-menu-name
+      .pull-right
+        = f.hidden_field :_destroy
+        = link_to 'verwijder kaart', '#', class: 'remove_fields button button-link button-mini icon-mini', data: {icon: 'l'}
+      .pull-left= f.text_field :name, placeholder: 'Menukaart'
 
-  = f.fields_for :restaurant_dishes do |restaurant_dish_builder|
-    = render 'spina/admin/restaurant_dishes/fields', f: restaurant_dish_builder
+    = f.fields_for :restaurant_dishes do |restaurant_dish_builder|
+      = render 'spina/admin/restaurant_dishes/fields', f: restaurant_dish_builder
 
-  = link_to_add_fields f, :restaurant_dishes do
-    %i{data: {icon: 't'}}
-    gerecht toevoegen
-    
+    = link_to_add_fields f, :restaurant_dishes do
+      %i{data: {icon: 't'}}
+      gerecht toevoegen
+      

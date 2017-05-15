@@ -22,7 +22,7 @@
   input
     border: none
     box-shadow: none
-    font-family: serif
+    font-family: Georgia, serif
     font-weight: 600
     padding: 5px 10px
 
@@ -33,14 +33,16 @@
     padding-top: 0
 
   .restaurant-dish-fields
+    align-items: center
+    justify-content: center
+    display: flex
     margin-bottom: 10px
 
-    &:after
-      clear: left
-      content: " "
-      display: block
+    .restaurant-dish-name
+      flex: 3
 
     .restaurant-dish-price
+      flex: 1
       text-align: right
 
       .remove_fields
